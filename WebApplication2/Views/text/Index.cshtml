@@ -1,0 +1,15 @@
+﻿
+@{
+    Layout = null;
+}
+@model IEnumerable<WebApplication2.XEGANMAY>
+<!DOCTYPE html>
+
+
+<h1>Danh Sách Tên Xe</h1>
+<ul>
+    @foreach (var xe in Model)
+    {
+        <li>@xe.TenXe - @xe.Anhbia</li>
+    }
+</ul>
