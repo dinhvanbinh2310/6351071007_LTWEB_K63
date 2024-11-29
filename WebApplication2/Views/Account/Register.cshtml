@@ -1,0 +1,123 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model WebApplication2.KHACHHANG
+
+@{
+    ViewBag.Title = "Đăng ký";
+}
+
+<h2>Đăng ký tài khoản</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken() <!-- Thêm anti-forgery token vào đây -->
+
+    <div class="register-form-group">
+        @Html.LabelFor(m => m.HoTen)
+        @Html.TextBoxFor(m => m.HoTen, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.HoTen, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="register-form-group">
+        @Html.LabelFor(m => m.Taikhoan)
+        @Html.TextBoxFor(m => m.Taikhoan, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Taikhoan, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="register-form-group">
+        @Html.LabelFor(m => m.Matkhau)
+        @Html.PasswordFor(m => m.Matkhau, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Matkhau, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="register-form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="register-form-group">
+        @Html.LabelFor(m => m.DiachiKH)
+        @Html.TextBoxFor(m => m.DiachiKH, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.DiachiKH, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="register-form-group">
+        @Html.LabelFor(m => m.DienthoaiKH)
+        @Html.TextBoxFor(m => m.DienthoaiKH, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.DienthoaiKH, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="register-btn">Đăng ký</button>
+}
+
+<!-- Thêm script kiểm tra lỗi trong client-side -->
+<style>
+    /* Form Style */
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .register-form-group {
+        margin-bottom: 15px;
+    }
+
+        .register-form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .register-form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+            .register-form-group input:focus {
+                border-color: #007bff;
+                outline: none;
+            }
+
+        .register-form-group .text-danger {
+            color: red;
+            font-size: 0.875rem;
+            margin-top: 5px;
+        }
+
+    .register-btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.125rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+        .register-btn:hover {
+            background-color: #0056b3;
+        }
+
+    .register-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 30px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .register-form-container {
+        margin-top: 30px;
+    }
+</style>

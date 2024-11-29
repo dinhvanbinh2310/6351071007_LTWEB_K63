@@ -1,0 +1,73 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Đặt hàng thành công";
+}
+
+<style>
+    body {
+        background-color: #f8f9fa;
+        font-family: Arial, sans-serif;
+    }
+
+    .order-success-container {
+        text-align: center;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+    }
+
+        .order-success-container h2 {
+            color: #28a745;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .order-success-container p {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .order-success-container a {
+            margin: 10px;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+        border: none;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+</style>
+
+<div class="order-success-container">
+    <h2>Đặt hàng thành công!</h2>
+    <p>Bạn đã thêm sản phẩm vào giỏ hàng thành công.</p>
+    <a href="@Url.Action("Index", "Cart")" class="btn btn-primary">Xem giỏ hàng</a>
+    <a href="@Url.Action("Index", "Home")" class="btn btn-secondary">Tiếp tục mua sắm</a>
+</div>

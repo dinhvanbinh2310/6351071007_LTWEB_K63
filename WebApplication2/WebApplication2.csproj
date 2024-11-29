@@ -136,7 +136,6 @@
     <Content Include="Contents\images\new-cars-model\ncm1.png" />
     <Content Include="Contents\images\new-cars-model\ncm2.png" />
     <Content Include="Contents\images\new-cars-model\ncm3.png" />
-    <Content Include="Contents\images\welcome-hero\welcome-banner.jpg" />
     <Content Include="Contents\js\bootsnav.js" />
     <Content Include="Contents\js\bootstrap.min.js" />
     <Content Include="Contents\js\custom.js" />
@@ -162,6 +161,8 @@
     <Compile Include="CHITIETDONTHANG.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\textController.cs" />
     <Compile Include="DONDATHANG.cs">
@@ -232,6 +233,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\text\Index.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Cart\OrderSuccess.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -241,6 +246,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Contents\images\welcome-hero\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

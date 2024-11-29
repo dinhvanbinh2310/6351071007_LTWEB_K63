@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebApplication2;
 
 namespace WebApplication2.Controllers
 {
@@ -13,12 +13,21 @@ namespace WebApplication2.Controllers
 
         public ActionResult Index()
         {
-            var danhSachXe = db.XEGANMAYs.ToList(); // Corrected property name
+            // Lấy toàn bộ danh sách xe
+            var danhSachXe = db.XEGANMAYs.ToList();
             if (danhSachXe == null || !danhSachXe.Any())
             {
                 return Content("Không có xe nào!");
             }
-            return View(danhSachXe);
+
+            // Lấy danh sách xe đặc biệt (ví dụ, lấy 8 xe đầu tiên)
+            var featuredBikes = db.XEGANMAYs.Take(8).ToList();
+
+            // Truyền dữ liệu vào View
+            ViewBag.DanhSachXe = danhSachXe;
+            ViewBag.FeaturedBikes = featuredBikes;
+
+            return View();
         }
     }
 }
